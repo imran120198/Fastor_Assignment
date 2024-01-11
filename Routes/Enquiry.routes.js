@@ -53,7 +53,7 @@ EnquiryRouter.get("/unclaim", async (req, res) => {
 });
 
 // API to fetch leads claimed by logged in users.
-EnquiryRouter.get("/:id/Allclaim", authentication, async (req, res) => {
+EnquiryRouter.get("/Allclaim", authentication, async (req, res) => {
   try {
     const employeeId = req.body.employeeId;
     const enquiry = await EnquiryModel.find({ claimedby: employeeId });
