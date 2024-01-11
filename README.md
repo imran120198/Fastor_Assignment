@@ -35,5 +35,5 @@ This API is designed for a customer relationship management(CRM) system.
 
 4.  API to fetch leads claimed by logged-in users
 
-  * Method: PATCH
+  * Method: GET
   * Endpoint: /employee/Allclaim
