@@ -24,7 +24,7 @@ EnquiryRouter.post("/enquiry", async (req, res) => {
 });
 
 // API to claim leads.
-EnquiryRouter.patch("/:id/claim", authentication, async (req, res) => {
+EnquiryRouter.patch("/:id/claim", async (req, res) => {
   const { id } = req.params;
   const { employeeId } = req.body;
 
@@ -55,7 +55,7 @@ EnquiryRouter.get("/unclaim", async (req, res) => {
 // API to fetch leads claimed by logged in users.
 EnquiryRouter.get("/Allclaim", authentication, async (req, res) => {
   try {
-    const employeeId = req.body.employeeId;
+    // const employeeId = req.body.employeeId;
     const enquiry = await EnquiryModel.find({ claimedby: employeeId });
     res.status(200).send({ message: "All CLaimed Lead", enquiry });
   } catch (err) {
